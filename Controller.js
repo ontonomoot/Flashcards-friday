@@ -18,6 +18,9 @@ class Controller {
   }
 
   printTopicsController(topicsMenu) {
+
+
+    
     // Тут нужно попросить экземпляр класса view вывести меню пользователю, 
     // а также дождаться ответа последнего
   }
@@ -37,7 +40,8 @@ const question = (question) =>
       return question('Вопрос 1: ');
     })
     .then ((data) => {
-      console.log('\n', data);
+      console.log('\n', data)
+      return question('Вопрос 2: ');
     })
     .then ((data) => {
       console.log('\n', data);
