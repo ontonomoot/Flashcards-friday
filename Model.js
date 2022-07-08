@@ -7,9 +7,9 @@ class Model {
       this.question = question;
       }
 
-  readTopics1() {
+  readTopics1(path) {
     return new Promise ((resolve, rejects) => {
-      fs.readFile('./topics/ястребы.txt', 'utf-8', (err, file) => {
+      fs.readFile(`./topics/${path}.txt`, 'utf-8', (err, file) => {
         const newArr = file.split('\n')
         const a = newArr.filter((el) => el !== '')
         let arr = [];
@@ -54,6 +54,10 @@ const model = new Model()
 // model.readTopics3()
 
 model.readTopics1()
+  .then(file => console.log(file))
+model.readTopics2()
+  .then(file => console.log(file))
+model.readTopics3()
   .then(file => console.log(file))
 
 
