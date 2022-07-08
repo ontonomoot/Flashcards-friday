@@ -49,7 +49,6 @@ class Model {
   }
 }
 const model = new Model()
-model.readTopics1()
 // model.readTopics2()
 // model.readTopics3()
 
