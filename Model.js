@@ -7,16 +7,24 @@ class Model {
 
   }
   readTopics(){
-    fs.readdir('./topics', (err, nameFile) => {
-      if(err) {
-        return 'ошибка!'
-      } 
-      return nameFile
-    })
+    
+    fs.readFile('./topics/nighthawk_flashcard_data.txt', 'utf-8', (err, file) => {
+      const newArr = file.split('\n')
+      const a = newArr.filter((el) => el !== '')
+      let arr = [];
+      for(let i = 0; i< a.length; i += 2){
+        arr.push ({quest : a[i], answer : a[i + 1]})
+      }
+      console.log(arr);
+      })
+      
   }
 }
+    
 
 
+const model = new Model()
+console.log(model.readTopics());
 // readTopics = (path) => {
 //   return new Promise((resolve, rejects) =>{
 //     fs.readdir(path, (err, nameFile) =>{
