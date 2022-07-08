@@ -4,11 +4,6 @@ const { resolve } = require('path')
 
 class Model {
   constructor(question) {
-    this.question = question;
-  }
-  readTopics(){
-    return new Promise ((resolve, rejects) => {
-    fs.readFile('./topics/nighthawk_flashcard_data.txt', 'utf-8', (err, file) => {
       const newArr = file.split('\n')
       const a = newArr.filter((el) => el !== '')
       let arr = [];
