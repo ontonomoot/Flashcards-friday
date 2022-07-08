@@ -4,22 +4,18 @@ const { resolve } = require('path')
 
 class Model {
   constructor(question) {
-  }
-  readTopics(path){
-    
-    fs.readFile(`./topics/${path}.txt`, 'utf-8', (err, file) => {
       const newArr = file.split('\n')
       const a = newArr.filter((el) => el !== '')
       let arr = [];
       for(let i = 0; i< a.length; i += 2){
         arr.push ({quest : a[i], answer : a[i + 1]})
       }
-      return arr;
+      return resolve(arr);
       })
-      
+    })
   }
   readTopics2(){
-    
+    return new Promise ((resolve, rejects) => {
     fs.readFile('./topics/otter_flashcard_data.txt', 'utf-8', (err, file) => {
       const newArr = file.split('\n')
       const a = newArr.filter((el) => el !== '')
@@ -27,12 +23,12 @@ class Model {
       for(let i = 0; i< a.length; i += 2){
         arr.push ({quest : a[i], answer : a[i + 1]})
       }
-      return arr;
+      return resolve(arr);
       })
-      
+    })
   }
   readTopics3(){
-    
+    return new Promise ((resolve, rejects) => {
     fs.readFile('./topics/raccoon_flashcard_data.txt', 'utf-8', (err, file) => {
       const newArr = file.split('\n')
       const a = newArr.filter((el) => el !== '')
@@ -40,9 +36,9 @@ class Model {
       for(let i = 0; i< a.length; i += 2){
         arr.push ({quest : a[i], answer : a[i + 1]})
       }
-      return arr;
+      return resolve(arr);
       })
-      
+    })  
   }
 
 }
