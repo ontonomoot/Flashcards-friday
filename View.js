@@ -24,13 +24,16 @@ const topicsArr = ['ястребы','еноты','выдры']
 
     .then((answer) => {
         
-      if (answer === 'Еноты') {
+      if (answer === 'Еноты' || answer === 'Ястребы' || answer === 'Выдры') {
         
-          model.readTopics1()
-            .then(file => console.log(file))
-          
-          
-          }
+          model.readTopics1(answer)
+            .then(file => file.forEach((el) => {
+              console.log(el.quest)
+            }
+            
+            ));   
+      }
+      
       })
 
 
