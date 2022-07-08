@@ -49,16 +49,16 @@ class Model {
   }
 }
 const model = new Model()
-// model.readTopics()
+model.readTopics1()
 // model.readTopics2()
 // model.readTopics3()
 
-model.readTopics1('еноты')
-  .then(file => console.log(file))
-model.readTopics2()
-  .then(file => console.log(file))
-model.readTopics3()
-  .then(file => console.log(file))
+// model.readTopics1('еноты')
+//   .then(file => console.log(file))
+// model.readTopics2()
+//   .then(file => console.log(file))
+// model.readTopics3()
+//   .then(file => console.log(file))
 
 
 module.exports = Model

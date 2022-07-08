@@ -15,11 +15,16 @@ class Controller {
   }
 
   run() {
-    model.readTopics1()
-      .then(file => console.log(file))
-      .then(() => rl.close())
 
-    
+    // console.log(model.this);
+    // model.readTopics3()
+      // .then(file => console.log(file))
+      // .then(() => rl.close())
+      // .then(() => rl.close())
+  view.quest()
+  .then(file => console.log(file))
+  // .then(() => rl.close())
+
 
     // console.log(model.this);
 
@@ -38,7 +43,8 @@ class Controller {
     // Тут нужно попросить экземпляр класса view вывести меню пользователю, 
     // а также дождаться ответа последнего
   }
-
+  // const controller = new Controller
+  // controller.run()
 
 
 
