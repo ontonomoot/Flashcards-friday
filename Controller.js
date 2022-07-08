@@ -1,3 +1,7 @@
+const readline = require ('readline')
+const { stdin : input, stdout: output } = require ('process');
+const rl = readline.createInterface ({input, output});
+
 class Controller {
   constructor(model, view) {
     this.model = model
@@ -14,11 +18,35 @@ class Controller {
   }
 
   printTopicsController(topicsMenu) {
+
+
+    
     // Тут нужно попросить экземпляр класса view вывести меню пользователю, 
     // а также дождаться ответа последнего
   }
 
   
 }
+const question = (question) =>
+  new Promise((resolve, reject) => 
+    rl.question(question ,(answer) => {
+      resolve (answer);
+    })
+  );
+
+  question ('Выбери тему: ' )
+    .then((data) => {
+      console.log('Твой ответ: ', data);
+      return question('Вопрос 1: ');
+    })
+    .then ((data) => {
+      console.log('\n', data)
+      return question('Вопрос 2: ');
+    })
+    .then ((data) => {
+      console.log('\n', data);
+    })
+    .then(() => rl.close())
+
 
 module.exports = Controller
