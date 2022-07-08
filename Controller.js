@@ -3,6 +3,10 @@ const { stdin : input, stdout: output } = require ('process');
 const rl = readline.createInterface ({input, output});
 const Model = require("./Model");
 const model = new Model
+const View = require("./View");
+const view = new View
+
+
 
 class Controller {
   constructor(model, view) {
@@ -15,6 +19,7 @@ class Controller {
       .then(file => console.log(file))
       .then(() => rl.close())
 
+    
 
     // console.log(model.this);
 
