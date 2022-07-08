@@ -49,7 +49,7 @@ class Model {
   }
 }
 const model = new Model()
-// model.readTopics()
+model.readTopics()
 // model.readTopics2()
 // model.readTopics3()
 
