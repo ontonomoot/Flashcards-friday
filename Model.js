@@ -3,12 +3,11 @@ const fs = require('fs')
 const { resolve } = require('path')
 
 class Model {
-  constructor() {
-
+  constructor(question) {
   }
-  readTopics(){
+  readTopics(path){
     
-    fs.readFile('./topics/nighthawk_flashcard_data.txt', 'utf-8', (err, file) => {
+    fs.readFile(`./topics/${path}.txt`, 'utf-8', (err, file) => {
       const newArr = file.split('\n')
       const a = newArr.filter((el) => el !== '')
       let arr = [];
