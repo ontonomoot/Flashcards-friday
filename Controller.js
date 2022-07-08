@@ -11,8 +11,12 @@ class Controller {
   }
 
   run() {
+    model.readTopics1()
+      .then(file => console.log(file))
+      .then(() => rl.close())
 
-    console.log(model.this);
+
+    // console.log(model.this);
 
     // Просим экземпляр класса модели прочитать папку со всеми темами и составить меню.
     // Попутно передаем метод контроллера this.printTopicsController,
@@ -30,7 +34,17 @@ class Controller {
     // а также дождаться ответа последнего
   }
 
-  
+
+
+
+
+
+
+
+// model.readTopics2()
+//   .then(file => console.log(file))
+//   .then(() => rl.close())
+
 // }
 // const question = (question) =>
 //   new Promise((resolve, reject) => 
